@@ -24,7 +24,6 @@ class MainViewModelImpl @Inject constructor(
     val repository: InfoRepository,
     val pagerSource: PagerSource,
 ) : MainViewModel, ViewModel() {
-    //  private lateinit var source: PagerSource
     override val getAllInfoLiveData = MutableSharedFlow<List<Data>>()
     override val getAllInfoFromDatabaseLiveData = MutableSharedFlow<List<Data>>()
     override val getErrorMessageLiveData = MutableSharedFlow<String>()

@@ -10,14 +10,12 @@ import com.bumptech.glide.Glide
 import uz.gita.infoappdemo.data.model.Data
 import android.view.View
 import android.widget.ImageView
-import uz.gita.infoappdemo.utils.getScreenWidth
 import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import uz.gita.infoappdemo.R
 import uz.gita.infoappdemo.databinding.ItemLayout2Binding
 import uz.gita.infoappdemo.databinding.ItemLayoutBinding
-import uz.gita.infoappdemo.utils.getScreenHeight
 
 
 class InfoAdapter(val metric : DisplayMetrics? = null) : PagingDataAdapter<Data, InfoAdapter.VH>(diffUtilCallback) {

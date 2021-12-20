@@ -17,10 +17,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import uz.gita.infoappdemo.App
@@ -33,6 +29,7 @@ import android.util.DisplayMetrics
 import androidx.paging.cachedIn
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
 import uz.gita.infoappdemo.ui.adapter.loader.LoaderStateAdapter
 
 
@@ -52,9 +49,10 @@ class MainScreen : Fragment(R.layout.screen_main) {
         setUpObservers()
 //        viewModel.getAllInfo(5,4)
         getSizeOfScreen()
+     //   getAllInfo()
 
         if (isNetworkAvailable(context)) {
-            getAllInfo()
+                    getAllInfo()
         } else {
             getAllInfoFromDatabase()
         }
